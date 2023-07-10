@@ -12,22 +12,37 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
+app.get("/api/", function (req, res) {
+  const dateNow = new Date(Date.now());
+  let returnString = dateNow.toUTCString();
+  let timestamp = dateNow.getTime();
+  res.json({"unix":timestamp, "utc":returnString})
+});
+
 app.get("/api/:date", function (req, res) {
   
   const regex = new RegExp('^[0-9]+$')
   let dateFromURL = req.params.date;
   let parsedDate;
 
-  if(regex.test(dateFromURL)) {
-    parsedDate = parseInt(dateFromURL);
-  } else {
-    parsedDate = `${dateFromURL}T00:00:00`;
+  let parsedDateObject = new Date(dateFromURL);
+  
+  if(isNaN(parsedDateObject)){
+    if(regex.test(dateFromURL)) {
+      parsedDate = parseInt(dateFromURL);
+    } else {
+      parsedDate = `${dateFromURL}T00:00:00`;
+    }
+  
+    parsedDateObject = new Date(parsedDate);
   }
 
-  const parsedDateObject = new Date(parsedDate);
+  if(isNaN(parsedDateObject)) {
+    return res.json({"error":"Invalid Date"})
+  }
 
-  const returnString = parsedDateObject.toUTCString();
-  const timestamp = parsedDateObject.getTime();
+  let returnString = parsedDateObject.toUTCString();
+  let timestamp = parsedDateObject.getTime();
   
   res.json({"unix":timestamp, "utc":returnString})
 });
