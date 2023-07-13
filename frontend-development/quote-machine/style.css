@@ -1,0 +1,71 @@
+:root {
+  --bg-color: #fff;
+}
+
+* {
+  margin: 0;
+}
+
+#root {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 1s;
+}
+
+#quote-box {
+  position: absolute;
+  width: 500px;
+  background: #fff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 30px;
+  color: var(--bg-color);
+  font-family: Arial;
+  font-size: 25px;
+  transition: color 500ms;
+}
+
+#quote-box div {
+  padding: 10px;
+}
+
+#quote-mark {
+  font-size: 30px;
+  width: 50px;
+}
+
+#text {
+  text-align: center;
+}
+
+#author {
+  text-align: right;
+  font-size: 17px;
+}
+
+#bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  text-decoration: none;
+  color: white;
+  background-color: var(--bg-color);
+  border: 2px solid var(--bg-color);
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 15px;
+  transition: background-color 1s;
+}
+
+.button:hover {
+  color: var(--bg-color);
+  background-color: white;
+}

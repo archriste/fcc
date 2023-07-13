@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,400i,700");
+
+* {
+  font-family: "Inconsolata", sans-serif;
+}
+
+:root {
+  --bg-color: #223;
+  --window-color: #8acbfd;
+  --text-color: #000;
+  --accent-color: #33fbff;
+  --element-color: #ffe4a8;
+  --element-active-color: #cdb786;
+}
+
+body {
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+}
+
+#drum-machine {
+  position: absolute;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.machine {
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  grid-template-rows: 1;
+  width: 700px;
+  height: 300px;
+  border: 10px solid var(--accent-color);
+  border-radius: 10px;
+  background-color: var(--window-color);
+}
+
+.pads {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  height: 80%;
+  width: 80%;
+  place-self: center;
+}
+
+button {
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 5px;
+  height: 90%;
+  width: 90%;
+  background-color: var(--element-color);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 300px;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px inset var(--accent-color);
+  border-radius: 5px;
+  padding: 10px;
+  background-color: var(--element-color);
+}
+
+.inactive {
+  border: 5px outset var(--accent-color);
+}
+
+.active {
+  background-color: var(--element-active-color);
+  border: 5px inset var(--accent-color);
+}
+
+#display {
+  width: 200px;
+  height: 40px;
+  text-align: center;
+}

@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fffefe;
+}
+
+#title {
+  text-align: center;
+  pointer-events: none;
+  font-size: 48px;
+  line-height: 24px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+#description {
+  text-align: center;
+  pointer-events: none;
+  font-size: 32px;
+  padding-bottom: 16px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#legend {
+  padding-top: 50px;
+  padding-left: 170px;
+  pointer-events: none;
+}
+
+#tooltip {
+  position: absolute;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  padding: 10px;
+  pointer-events: none;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+.name {
+  display: block;
+  font-weight: bold;
+}
